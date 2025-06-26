@@ -91,7 +91,7 @@ This is a full-stack web application that provides AI-powered palm reading analy
 
 ### Replit Configuration
 - **Auto-scaling**: Configured for autoscale deployment target
-- **Port Mapping**: Internal port 5000 mapped to external port 80
+- **Port Mapping**: Internal port 1004 mapped to external port 80
 - **Build Process**: `npm run build` for production assets
 - **Start Command**: `npm run start` for production server
 
