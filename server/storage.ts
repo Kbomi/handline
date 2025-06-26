@@ -42,8 +42,10 @@ export class MemStorage implements IStorage {
   async createPalmAnalysis(insertAnalysis: InsertPalmAnalysis): Promise<PalmAnalysis> {
     const id = this.currentAnalysisId++;
     const analysis: PalmAnalysis = {
-      ...insertAnalysis,
       id,
+      userId: insertAnalysis.userId ?? null,
+      imageData: insertAnalysis.imageData,
+      analysisResult: insertAnalysis.analysisResult,
       createdAt: new Date(),
     };
     this.palmAnalyses.set(id, analysis);

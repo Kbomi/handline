@@ -116,6 +116,8 @@ This is a full-stack web application that provides AI-powered palm reading analy
 ```
 Changelog:
 - June 26, 2025. Initial setup
+- June 26, 2025. Added comprehensive README.md documentation
+- June 26, 2025. Fixed TypeScript errors in schema and routes for proper nullable userId support
 ```
 
 ## User Preferences

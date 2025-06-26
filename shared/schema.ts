@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, jsonb, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -10,7 +10,7 @@ export const users = pgTable("users", {
 
 export const palmAnalyses = pgTable("palm_analyses", {
   id: serial("id").primaryKey(),
-  userId: serial("user_id").references(() => users.id),
+  userId: integer("user_id").references(() => users.id),
   imageData: text("image_data").notNull(), // base64 encoded image
   analysisResult: jsonb("analysis_result").notNull(), // JSON analysis from OpenAI
   createdAt: timestamp("created_at").defaultNow().notNull(),
@@ -25,6 +25,8 @@ export const insertPalmAnalysisSchema = createInsertSchema(palmAnalyses).pick({
   userId: true,
   imageData: true,
   analysisResult: true,
+}).extend({
+  userId: z.number().optional().nullable(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

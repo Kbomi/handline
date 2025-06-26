@@ -34,7 +34,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Palm analysis error:", error);
       res.status(500).json({ 
-        message: error.message || "손금 분석 중 오류가 발생했습니다" 
+        message: (error as Error).message || "손금 분석 중 오류가 발생했습니다" 
       });
     }
   });
@@ -60,7 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Get analysis error:", error);
       res.status(500).json({ 
-        message: "분석 결과를 가져오는 중 오류가 발생했습니다" 
+        message: (error as Error).message || "분석 결과를 가져오는 중 오류가 발생했습니다" 
       });
     }
   });
