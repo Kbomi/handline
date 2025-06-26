@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --mystical-purple: hsl(258, 69%, 53%);
+  --mystical-gold: hsl(45, 93%, 47%);
+  --dark-navy: hsl(249, 61%, 20%);
+  --ethereal-blue: hsl(217, 91%, 60%);
+  --warm-rose: hsl(323, 86%, 68%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 text-white min-h-screen;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}
+
+@layer utilities {
+  .mystical-purple {
+    color: var(--mystical-purple);
+  }
+  .mystical-gold {
+    color: var(--mystical-gold);
+  }
+  .dark-navy {
+    color: var(--dark-navy);
+  }
+  .ethereal-blue {
+    color: var(--ethereal-blue);
+  }
+  .warm-rose {
+    color: var(--warm-rose);
+  }
+  
+  .bg-mystical-purple {
+    background-color: var(--mystical-purple);
+  }
+  .bg-mystical-gold {
+    background-color: var(--mystical-gold);
+  }
+  .bg-dark-navy {
+    background-color: var(--dark-navy);
+  }
+  .bg-ethereal-blue {
+    background-color: var(--ethereal-blue);
+  }
+  .bg-warm-rose {
+    background-color: var(--warm-rose);
+  }
+
+  .text-mystical-purple {
+    color: var(--mystical-purple);
+  }
+  .text-mystical-gold {
+    color: var(--mystical-gold);
+  }
+  .text-ethereal-blue {
+    color: var(--ethereal-blue);
+  }
+  .text-warm-rose {
+    color: var(--warm-rose);
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(107, 70, 193, 0.3); }
+    100% { box-shadow: 0 0 30px rgba(107, 70, 193, 0.6); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
